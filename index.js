@@ -20,15 +20,15 @@ api.use(jwt({
     ]
 }));
 
-api.get('/recipe', recipes.getAll);
-api.get('/recipe/:id', recipes.getOne);
+api.get('/recipes', recipes.getAll);
+api.get('/recipes/:id', recipes.getOne);
 
 api.post('/login', users.login);
 api.post('/create-account', users.create);
-api.post('/recipe', recipes.create);
+api.post('/recipes', recipes.create);
 
-api.put('/recipe/:id', recipes.update);
-api.delete('/recipe/:id', recipes.remove);
+api.put('/recipes/:id', recipes.update);
+api.delete('/recipes/:id', recipes.remove);
 
 api.use(function (err, req, res, next) {
     if(err.name === "UnauthorizedError") {
